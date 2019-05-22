@@ -8,15 +8,14 @@
   ******************************************************************************
   * @attention
   *
-  * 实验平台:秉火 F103-霸道 STM32 开发板 
+  * 实验平台:秉火 F103-MINI STM32 开发板 
   * 论坛    :http://www.firebbs.cn
-  * 淘宝    :http://firestm32.taobao.com
+  * 淘宝    :https://fire-stm32.taobao.com
   *
   ******************************************************************************
   */ 
   
 #include "bsp_key.h"  
-#include "los_task.ph"
 
 /**
   * @brief  配置按键用到的I/O口
@@ -58,7 +57,7 @@ uint8_t Key_Scan(GPIO_TypeDef* GPIOx,uint16_t GPIO_Pin)
 	if(GPIO_ReadInputDataBit(GPIOx,GPIO_Pin) == KEY_ON )  
 	{	 
 		/*等待按键释放 */
-		while(GPIO_ReadInputDataBit(GPIOx,GPIO_Pin) == KEY_ON);//{		LOS_TaskDelay(10);};   
+		while(GPIO_ReadInputDataBit(GPIOx,GPIO_Pin) == KEY_ON);   
 		return 	KEY_ON;	 
 	}
 	else
