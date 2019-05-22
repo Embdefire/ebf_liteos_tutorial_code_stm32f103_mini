@@ -229,7 +229,7 @@ static void Write_Task(void)
 	{
 		LOS_SemPend( BinarySem_Handle , LOS_WAIT_FOREVER );  //获取二值信号量 BinarySem_Handle，没获取到则一直等待		
 		ucValue [ 0 ] ++;		
-		LOS_TaskDelay ( 1000 );        			/* 延时100ms */		
+		LOS_TaskDelay ( 1000 );        			/* 延时1000ms */		
 		ucValue [ 1 ] ++;		
 		LOS_SemPost( BinarySem_Handle );    //给出二值信号量 xSemaphore		
 		LOS_TaskYield();  									//放弃剩余时间片，进行一次任务切换	
